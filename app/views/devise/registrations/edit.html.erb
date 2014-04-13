@@ -1,0 +1,39 @@
+<div class="row">
+<div class="span4">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "well" }) do |f| %>
+      <%= devise_error_messages! %>
+  <fieldset>
+    <legend>Edit <%= current_user.full_name %></legend>
+      <%= f.input :first_name %>
+
+      <%= f.input :last_name %>
+
+      <%= f.input :profile_name %>
+
+      <%= f.input :email, autofocus: "true" %>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <%= f.input :password, autocomplete: "off" %>
+
+      <%= f.input :password_confirmation, autocomplete: "off" %>
+
+      <%= f.input :current_password, autocomplete: "off" %> <i>(we need your current password to confirm your changes)</i><br />
+        
+
+      <div><%= f.button :submit, "Edit" %></div>
+  </fieldset>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>
+</div>
+ <div class="span8">
+    <h2>Make some changes</h2>
+  </div>
+</div>
