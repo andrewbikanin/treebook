@@ -2,5 +2,10 @@ andrew:
   first_name: "Andrew"
   last_name: "Bikanin"
   email: "andrewbikanin@gmail.com"
-  profile_name: "Bik"
+  profile_name: "bik"
 
+tani:
+  first_name: "Tani"
+  last_name: "Terbukova"
+  email: "tani@gmail.com"
+  profile_name: "tan163"

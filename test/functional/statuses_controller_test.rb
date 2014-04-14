@@ -36,6 +36,7 @@ class StatusesControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to status_path(assigns(:status))
+    assert_equal assigns(:status).user_id, users(:andrew).id
   end
 
   test "should show status" do
