@@ -30,7 +30,9 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "a user should have a profile name without spaces" do
-  	user = User.new
+  	user = User.new(first_name: 'Andrew', last_name: 'Bikanin', email: 'andrewsbikanin@gmail.com')
+  	user.password = user.password_confirmation = 'asdasfda'
+
   	user.profile_name = "My Profile Name With Spaces"
   	
 
@@ -40,4 +42,11 @@ class UserTest < ActiveSupport::TestCase
   	assert user.errors[:profile_name].include?("Must be formatted correctly")
   end
 
+  test "a user has correct profile" do
+  		user = User.new(first_name: 'Andrew', last_name: 'Bikanin', email: 'andrewsbikanin@gmail.com')
+  		user.password = user.password_confirmation = 'asdasfda'
+
+  		user.profile_name = 'bik_1'
+  		assert user.valid?
+  end
 end
